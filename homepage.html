@@ -5,32 +5,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+/* General styles */
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Style the top navigation bar */
 .topnav {
-  overflow: hidden;
-  background-color: #333;
-
+  position: absolute; /* Fixes the nav at the top of the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures it is above other content */
+  text-align: center;
+  padding: 5px 0;
 }
 
 /* Style the topnav links */
 .topnav a {
-  margin: auto;
-  width: 25%;
-  float: left;
-  display: block;
+  display: inline-block;
   color: #f2f2f2;
-  text-align: center;
-  padding: 14px 20px;
+  padding: 14px 16px;
   text-decoration: none;
 }
 
@@ -42,35 +45,42 @@ body {
 
 /* Style the content */
 .content {
-  background-color: #ddd;
-  padding: 10px;
-  height: 200px; /* Should be removed. Only for demonstration */
+
+}
+
+/* Ensure the image resizes responsively and is centered */
+.content img {
+  display: block;
+  width: 100vw; 
+  height: 50vw; 
+  object-fit: cover;
+  position: absolute;
+  overflow: hidden;
 }
 
 /* Style the footer */
 .footer {
   background-color: #f1f1f1;
   padding: 10px;
+  text-align: center;
 }
 </style>
-</head>
 <body>
 
-<div class="topnav">
-  <a href="#">LogoPlaceholder</a>
-  <a href="#">Models</a>
-  <a href="#">Shop</a>
-  <a href="#">About</a>
-</div>
+  <div class="topnav">
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+  </div>
+  
+  <div class="content">
+    <img src="Images/20240808_114244.jpg" alt="Description of image">
+  </div>
+  
+  <div class="footer">
+    <p>Footer</p>
+  </div>
+  
+  </body>
+  </html>
 
-<div class="content">
-  <h2>CSS Template</h2>
-  <p>A topnav, content and a footer.</p>
-</div>
-
-<div class="footer">
-  <p>Footer</p>
-</div>
-
-</body>
-</html>
