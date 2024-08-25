@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/* General styles */
+
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
@@ -15,46 +15,47 @@
 
 body {
   margin: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden; 
 }
 
-/* Style the top navigation bar */
+
+
+/* top navigation bar */
 .topnav {
-  position: absolute; /* Fixes the nav at the top of the viewport */
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Ensures it is above other content */
+  z-index: 1000; 
   text-align: center;
   padding: 5px 0;
 }
 
-/* Style the topnav links */
+/* topnav links */
 .topnav a {
   display: inline-block;
   color: #f2f2f2;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 3vw;
+  font-size: 2vw;
   margin: 0 5vw;
 }
 
-/* Change color on hover */
+
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Style the content */
+/* i dont even f   ing know what this does*/
 .content {
   position: relative; 
 }
 
-
 .image-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100vh; 
   overflow: hidden;
 }
 
@@ -65,7 +66,7 @@ body {
   object-fit: cover;
 }
 
-/* Container for overlay text */
+
 .text-overlay {
   position: absolute;
   top: 50%;
@@ -73,22 +74,213 @@ body {
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  z-index: 1; /* Ensure text is above the image */
+  z-index: 1; 
 }
 
-/* Title styling */
 .text-overlay h1 {
-  font-size: 10vw;
+  font-size: 7vw;
   margin: 0;
 }
 
-/* Subheading styling */
 .text-overlay h2 {
-  font-size: 4vw;
+  font-size: 3vw;
   margin: 0;
 }
 
-/* Style the footer */
+/* i dont know */
+.title-overlay {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.title-overlay h1 {
+  font-size: 5vw;
+  margin: 0;
+}
+
+/* text for images with buttons */
+.image-text-overlay {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 2vw;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+/* whats in the box section */
+.whats-in-the-box {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding: 0; 
+  background-color: #f9f9f9; 
+  box-sizing: border-box; 
+  height: 100vh; 
+}
+
+.box-content {
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: center; 
+  justify-content: center; 
+  width: 100%;
+  max-width: 1200px; 
+  height: 100%; 
+}
+
+.box-left {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  box-sizing: border-box; 
+}
+
+.box-left h2 {
+  width: 100%; 
+  margin-bottom: 10px;
+  font-size: 4vw;
+  text-align: center; 
+}
+
+.box-left ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 2vw;
+  margin: 3vw; 
+  text-align: left; 
+}
+
+.box-right {
+  flex: 1;
+  padding: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; 
+  overflow: hidden; 
+}
+
+.box-right img {
+  max-width: 100%;
+  object-fit: cover; 
+  width: 30vw;
+}
+
+
+
+
+/* review section */
+.review {
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.content-container.reverse {
+  flex-direction: row; 
+}
+
+.text-box {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 50%;
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; 
+}
+
+.video-content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 50%;
+}
+
+video {
+  width: 100%;
+  height: 30vw;
+  object-fit: cover;
+}
+
+/* FAQ section */
+.faq-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.faq-expand {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.faq-content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+.faq-content p {
+  margin: 0;
+}
+
+.faq-expand.active, .faq-expand:hover {
+  background-color: #45a049;
+}
+
+
+
+/* footer */
 .footer {
   background-color: #f1f1f1;
   padding: 10px;
@@ -96,6 +288,13 @@ body {
 }
 </style>
 </head>
+
+
+
+
+
+
+
 <body>
 
   <div class="topnav">
@@ -105,25 +304,131 @@ body {
   </div>
   
   <div class="content">
+    <!-- RAHHHH -->
     <div class="image-container">
-      <img src="Images/20240808_114244.jpg" alt="Description of image">
+      <img src="Images/20240808_114244.jpg" alt="main image">
       <div class="text-overlay">
-        <h1>Main Title</h1>
-        <h2>Subheading</h2>
+        <h1>HENRY</h1>
+        <h2>STINKS</h2>
       </div>
     </div>
 
+    <!-- drone -->
     <div class="image-container">
-      <img src="Images/20240808_120439.jpg" alt="Description of image">
+      <img src="Images/20240808_120439.jpg" alt="drone">
+      <div class="title-overlay">
+        <h1>Drone</h1>
+      </div>
+      <div class="image-text-overlay">
+        <div class="button-container">
+          <a href="models.html" class="button">Learn More</a>
+        </div>
+      </div>
     </div>
+
+    <!-- hovercraft -->
     <div class="image-container">
-      <img src="Images/20240808_114244.jpg" alt="Description of image">
+      <img src="Images/20240808_114244.jpg" alt="hovercraft">
+      <div class="title-overlay">
+        <h1>Hovercraft</h1>
+      </div>
+      <div class="image-text-overlay">
+        <div class="button-container">
+          <a href="models.html" class="button">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- other -->
+    <div class="image-container">
+      <img src="Images/20240808_120437.jpg" alt="other">
+      <div class="title-overlay"> 
+        <h1>Infinitely Customizable</h1>
+      </div>
+      <div class="image-text-overlay">
+        <div class="button-container">
+          <a href="models.html" class="button">Learn More</a>
+        </div>
+      </div>
     </div>
   </div>
-  
+
+
+  <!-- whats in the box section -->
+<div class="whats-in-the-box">
+  <div class="box-content">
+    <div class="box-left">
+      <h2>What's in the Box</h2>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </div>
+    <div class="box-right">
+      <img src="Images/6x1k57.jpg" alt="RAHHH">
+    </div>
+  </div>
+</div>
+
+
+
+<!-- review section -->
+<div class="review">
+  <div class="content-container">
+    <div class="video-content">
+      <video controls>
+        <source src="Images/20240808_115114.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="text-box">
+      <h2>"aisodnaosidnwockasnldkw"</h2>
+    </div>
+  </div>
+  <div class="content-container reverse">
+    <div class="text-box">
+      <h2>"nah"</h2>
+    </div>
+    <div class="video-content">
+      <video controls>
+        <source src="Images/20240808_120358.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ section -->
+<div class="faq-section">
+    <button class="faq-expand">FAQ</button>
+    <div class="faq-content">
+      <p>bum bum</p>
+    </div>
+  </div>
+
+
   <div class="footer">
     <p>Footer</p>
   </div>
   
+
+
+<!-- bro i dont fucking know at this point-->
+  <script>
+    var coll = document.getElementsByClassName("faq-expand");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+    </script>
 </body>
 </html>
