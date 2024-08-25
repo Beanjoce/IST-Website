@@ -47,17 +47,45 @@ body {
 
 /* Style the content */
 .content {
-
+  position: relative; 
 }
 
-/* Ensure the image resizes responsively and is centered */
-.content img {
-  display: block;
-  width: 100vw; 
-  height: 50vw; 
-  object-fit: cover;
+
+.image-container {
   position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
   overflow: hidden;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Container for overlay text */
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1; /* Ensure text is above the image */
+}
+
+/* Title styling */
+.text-overlay h1 {
+  font-size: 10vw;
+  margin: 0;
+}
+
+/* Subheading styling */
+.text-overlay h2 {
+  font-size: 4vw;
+  margin: 0;
 }
 
 /* Style the footer */
@@ -67,6 +95,7 @@ body {
   text-align: center;
 }
 </style>
+</head>
 <body>
 
   <div class="topnav">
@@ -76,14 +105,25 @@ body {
   </div>
   
   <div class="content">
-    <img src="Images/20240808_114244.jpg" alt="Description of image">
-    <img src="Images/20240808_120439.jpg" alt="Description of image">
-    <img src="Images/20240808_114244.jpg" alt="Description of image">
+    <div class="image-container">
+      <img src="Images/20240808_114244.jpg" alt="Description of image">
+      <div class="text-overlay">
+        <h1>Main Title</h1>
+        <h2>Subheading</h2>
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="Images/20240808_120439.jpg" alt="Description of image">
+    </div>
+    <div class="image-container">
+      <img src="Images/20240808_114244.jpg" alt="Description of image">
+    </div>
   </div>
   
   <div class="footer">
     <p>Footer</p>
   </div>
   
-  </body>
-  </html>
+</body>
+</html>
