@@ -16,6 +16,7 @@
 body {
   margin: 0;
   overflow-x: hidden; 
+  
 }
 
 
@@ -74,245 +75,177 @@ body {
 
 
 
-/* i dont even know what this does*/
-.content {
-  position: relative; 
+
+
+
+
+
+
+
+/* overview section */
+.overview {
+  max-width: 90vw;
+  height: 100vh;
+  margin: 20px auto ;
+  display: flex;
+  padding: 20px;
+  background-color: #fff; 
+  box-sizing: border-box;
+  margin-top: 80px; 
 }
 
-.image-container {
+.overview-left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Image Slideshow Container */
+.overview-image-slideshow {
   position: relative;
-  width: 100%;
-  height: 100vh; 
+  height: 80vh;
   overflow: hidden;
 }
 
-.image-container img {
-  display: block;
+.overview-image-slideshow img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block; 
+  position: absolute; 
+  top: 0;
+  left: 0;
 }
 
 
-.text-overlay {
+.prev, .next {
+  cursor: pointer;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: auto;
+  padding: 16px;
   color: white;
-  text-align: center;
-  z-index: 1; 
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 1;
 }
 
-.text-overlay h1 {
-  font-size: 7vw;
-  margin: 0;
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-.text-overlay h2 {
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.overview-image-slideshow img {
+  display: none;
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* everything else in the overview */
+.overview-right {
+  flex: 1;  
+  padding: 1vw 1vw;
+  box-sizing: border-box;
+}
+
+.overview-title {
   font-size: 3vw;
-  margin: 0;
+  margin-bottom: 1vw;
 }
 
-/* i dont know */
-.title-overlay {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  text-align: center;
-  z-index: 1;
+.overview-price {
+  font-size: 2vw;
+  margin-bottom: 4vw;
 }
 
-.title-overlay h1 {
-  font-size: 5vw;
-  margin: 0;
+.overview-description {
+  font-size: 1vw;
+  margin-bottom: 6vw;
 }
 
-/* text for images with buttons */
-.image-text-overlay {
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 1;
-}
-
-.button-container {
-  margin-top: 20px;
-}
-
-.button {
+.overview-button {
   display: inline-block;
   background-color: #4CAF50;
   color: white;
   padding: 10px 20px;
   text-decoration: none;
-  font-size: 2vw;
   border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: #45a049;
-}
-
-
-
-
-/* whats in the box section */
-.whats-in-the-box {
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-  padding: 0; 
-  background-color: #ffffff; 
-  box-sizing: border-box; 
-  height: 100vh; 
-}
-
-.box-content {
-  display: flex;
-  flex-wrap: wrap; 
-  align-items: center; 
-  justify-content: center; 
-  width: 100%;
-  max-width: 1200px; 
-  height: 100%; 
-}
-
-.box-left {
-  flex: 1;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; 
-  box-sizing: border-box; 
-}
-
-.box-left h2 {
-  width: 100%; 
-  margin-bottom: 10px;
-  font-size: 4vw;
-  text-align: center; 
-}
-
-.box-left ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  font-size: 2vw;
-  margin: 3vw; 
-  text-align: left; 
-}
-
-.box-right {
-  flex: 1;
-  padding: 5vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box; 
-  overflow: hidden; 
-}
-
-.box-right img {
-  max-width: 100%;
-  object-fit: cover; 
-  width: 30vw;
-}
-
-
-
-
-/* review section */
-.review {
-  width: 100vw;
-  box-sizing: border-box;
-}
-
-.content-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.content-container.reverse {
-  flex-direction: row; 
-}
-
-.text-box {
-  flex: 1;
-  padding: 20px;
-  box-sizing: border-box;
-  max-width: 50%;
-  text-align: center; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 1; 
-}
-
-.video-content {
-  flex: 1;
-  padding: 20px;
-  box-sizing: border-box;
-  max-width: 50%;
-}
-
-video {
-  width: 100%;
-  height: 30vw;
-  object-fit: cover;
-}
-
-/* FAQ section */
-.faq-section {
-  padding: 20px;
-  background-color: #ffffff;
+  font-size: 3vw;
   text-align: center;
 }
 
-.faq-expand {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-.faq-content {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
-}
-
-.faq-content h1 {
-  padding: 2vw;
-  font-weight: bold;
-  font-size: 2vw;
-}
-
-.faq-content p {
-  padding: 2vw 18vw;
-  font-size: 2vw;
-  word-wrap: break-word;
-  word-break: keep-all;
-}
-
-.faq-expand.active, .faq-expand:hover {
+.overview-button:hover {
   background-color: #45a049;
 }
+
+
+/* Tech Specs Section */
+.tech-specs {
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  margin: 20px auto;
+  max-width: 90vw;
+}
+
+.tech-specs-title {
+  font-size: 2.5vw;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tech-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.tech-specs-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.tech-specs-table td {
+  font-size: 1vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -449,12 +382,6 @@ video {
   grid-column: span 2; /* Span 2 columns */
 }
 
-
-
-
-
-
-
 </style>
 </head>
 
@@ -477,118 +404,120 @@ video {
     </div>
   </div>
   
-  
-  
-  
-  <div class="content">
-    <!-- RAHHHH -->
-    <div class="image-container">
-      <img src="Images/20240808_114244.jpg" alt="main image">
-      <div class="text-overlay">
-        <h1>HENRY</h1>
-        <h2>STINKS</h2>
+
+  <div class="overview">
+    <div class="overview-left">
+      <div class="overview-image-slideshow">
+        <img src="Images/20240808_114232.jpg" class="fade" style="width:100%">
+        <img src="Images/20240808_114259.jpg" class="fade" style="width:100%">
+        <img src="Images/20240808_120437.jpg" class="fade" style="width:100%">
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
       </div>
     </div>
-
-    <!-- drone -->
-    <div class="image-container">
-      <img src="Images/20240808_120439.jpg" alt="drone">
-      <div class="title-overlay">
-        <h1>Drone</h1>
-      </div>
-      <div class="image-text-overlay">
-        <div class="button-container">
-          <a href="models.html" class="button">Learn More</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- hovercraft -->
-    <div class="image-container">
-      <img src="Images/20240808_114244.jpg" alt="hovercraft">
-      <div class="title-overlay">
-        <h1>Hovercraft</h1>
-      </div>
-      <div class="image-text-overlay">
-        <div class="button-container">
-          <a href="models.html" class="button">Learn More</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- other -->
-    <div class="image-container">
-      <img src="Images/20240808_120437.jpg" alt="other">
-      <div class="title-overlay"> 
-        <h1>Infinitely Customizable</h1>
-      </div>
-      <div class="image-text-overlay">
-        <div class="button-container">
-          <a href="models.html" class="button">Learn More</a>
-        </div>
-      </div>
+    <div class="overview-right">
+      <h1 class="overview-title">SigmaBlock Customizable Drone</h1>
+      <div class="overview-price">$159.99</div>
+      <p class="overview-description">
+        Once upon a time there was a very fat man called henry hafer and he was very fat and stinky and smelly
+      </p>
+      <a href="order.html" class="overview-button">Order Now</a>
     </div>
   </div>
 
 
-  <!-- whats in the box section -->
-<div class="whats-in-the-box">
-  <div class="box-content">
-    <div class="box-left">
-      <h2>What's in the Box</h2>
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-      </ul>
-    </div>
-    <div class="box-right">
-      <img src="Images/6x1k57.jpg" alt="RAHHH">
-    </div>
-  </div>
+<!-- Tech Specs Section -->
+<div class="tech-specs">
+  <h2 class="tech-specs-title">Tech Specs</h2>
+  <table class="tech-specs-table">
+    <tbody>
+      <tr>
+        <td>Age</td>
+        <td>8+</td>
+      </tr>
+      <tr>
+        <td>Basic Functions</td>
+        <td>Rise and Fall / Advance and Retreat / Steering / Side Flight / Slight Adjustment / Light Control</td>
+      </tr>
+      <tr>
+        <td>Advanced Features</td>
+        <td>Hover / Somersault / Customizable Stunts</td>
+      </tr>
+      <tr>
+        <td>Forms</td>
+        <td>Six-Axis Aircraft / Hovercraft / DIY</td>
+      </tr>
+      <tr>
+        <td>Environment to Use</td>
+        <td>Air / Ground / Water</td>
+      </tr>
+      <tr>
+        <td>Product Dimensions</td>
+        <td>Six-Axis Aircraft [D 235x54mm], Hovercraft [335x208x126mm]</td>
+      </tr>
+      <tr>
+        <td>Color</td>
+        <td>Blacktd</td>
+      </tr>
+      <tr>
+        <td>Material</td>
+        <td>EPP / PP, Environment-friendly Material</td>
+      </tr>
+      <tr>
+        <td>Flight Speed</td>
+        <td>0.2 m/s, Adjustable</td>
+      </tr>
+      <tr>
+        <td>Flight Time</td>
+        <td>Approx. 6 minutes</td>
+      </tr>
+      <tr>
+        <td>Control Range</td>
+        <td>10 Meters</td>
+      </tr>
+      <tr>
+        <td>Flight Height</td>
+        <td>5 Meters</td>
+      </tr>
+      <tr>
+        <td>Battery Capacity</td>
+        <td>700mAh, Replaceable</td>
+      </tr>
+      <tr>
+        <td>Connection Method</td>
+        <td>Magnetic Connection</td>
+      </tr>
+      <tr>
+        <td>Control Method</td>
+        <td>SigmaBlock App</td>
+      </tr>
+      <tr>
+        <td>Communication Method</td>
+        <td>Bluetooth</td>
+      </tr>
+      <tr>
+        <td>Sensor</td>
+        <td>Six-axis Gyroscope / Ultrasonic / Barometer</td>
+      </tr>
+      <tr>
+        <td>Camera Support</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Programming Support</td>
+        <td>Graphical Programming</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+  
 
 
 
-<!-- review section -->
-<div class="review">
-  <div class="content-container">
-    <div class="video-content">
-      <video controls>
-        <source src="Images/20240808_115114.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="text-box">
-      <h2>"aisodnaosidnwockasnldkw"</h2>
-    </div>
-  </div>
-  <div class="content-container reverse">
-    <div class="text-box">
-      <h2>"nah"</h2>
-    </div>
-    <div class="video-content">
-      <video controls>
-        <source src="Images/20240808_120358.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-</div>
 
-<!-- FAQ section -->
-<div class="faq-section">
-    <button class="faq-expand">FAQ</button>
-    <div class="faq-content">
-      <h1>Q. What program is used to code the drone</h1>
-      <p>A. My name is walter hartwel white My name is walter hartwel white My name is walter hartwel white</p>
-      <h1>Q. Bum BUm poo</h1>
-      <p>A. My name is walter hartwel white</p>
-      <h1>Q. Bum BUm poo</h1>
-      <p>A. My name is walter hartwel white</p>
-      <h1>Q. Bum BUm poo</h1>
-      <p>A. My name is walter hartwel white</p>
-    </div>
-  </div>
+
+
+
 
 
 <!-- footer -->
@@ -674,27 +603,30 @@ video {
   </div>
 </div>
 </div>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
 
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-  
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-
-<!-- bro i dont fucking know at this point-->
-  <script>
-    var coll = document.getElementsByClassName("faq-expand");
-    var i;
-    
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight){
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      });
-    }
-    </script>
+function showSlides(n) {
+  let i;
+  let slides = document.querySelectorAll(".overview-image-slideshow img");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+</script>
 </body>
 </html>
