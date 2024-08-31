@@ -18,45 +18,76 @@ body {
   background-color: rgb(176, 231, 255);
 }
 
-/* top navigation bar */
+/* Top navigation bar */
 .topnav {
-  position: absolute; 
+  position: absolute;  
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; 
-  text-align: center;
+  z-index: 1000;
   padding: 5px 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5px 20px;
 }
 
-/* topnav links */
-.topnav a {
+
+.topnav-logo-link {
+  position: absolute;
+  left: 20px; 
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.topnav-logo {
+  height: 2vw; 
+  width: auto; 
+  display: block; 
+}
+
+
+.topnav-links {
+  display: inline-block; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Topnav links */
+.topnav-links a {
   display: inline-block;
   color: #f2f2f2;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 3vw;
-  margin: 0 5vw;
+  font-size: 2vw;
+  margin: 0 5vw; 
 }
 
 
-.topnav a:hover {
+.topnav-links a:hover {
   background-color: #ddd;
   color: black;
 }
 
-* {box-sizing:border-box}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 100%; 
   position: relative;
   margin: auto;
+  overflow: hidden; 
+  height: 100vh; 
 }
 
 /* Hide the images by default */
 .mySlides {
   display: none;
+}
+
+.slideshow-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
 }
 
 /* Next & previous buttons */
@@ -149,11 +180,137 @@ body {
   to {opacity: 1}
 }
 
-/* Style the footer */
+/* Footer */
 .footer {
-  background-color: #384575;
+  background-color: #f1f1f1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footer-left {
+  flex: 1;
+  max-width: 300px; 
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  max-width: 150px; 
+  display: block;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  justify-content: center; 
+}
+
+.social-button {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: .8vw 1.3vw;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1vw;
+}
+
+.social-button:hover {
+  background-color: #45a049;
+}
+
+.footer-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Footer Links */
+.footer-links {
+  display: flex;
+  justify-content: center; 
+  gap: 12vw; 
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  text-decoration: underline;
+  color: #333;
+  font-size: 1vw;
+}
+
+.footer-text-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.footer-text-box {
+
+  padding: 10px; 
+  text-align: center;
+  font-size: 0.8vw;
+  position: relative; 
+}
+
+.footer-list {
+  list-style-type: none; /* Remove default list styling */
+  margin: 10px 0 0; 
+  font-size: 0.7vw; 
+}
+
+.footer-list li {
+  margin-bottom: 5px; 
+}
+
+.footer-list a {
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Match color with text */
+}
+
+.footer-list a:hover {
+  text-decoration: underline; /* Underline on hover for links */
+}
+
+
+/* Bottom bar container */
+.footer-bottom-container {
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+/* Bottom bar */
+.footer-bottom-bar {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px; 
+  width: 100%; 
+  box-sizing: border-box;
+  border-top: 2px solid #ccc; 
+}
+
+/* Bottom text boxes */
+.footer-bottom-text-box {
   padding: 10px;
   text-align: center;
+  font-size: 0.8vw;
+}
+
+.footer-bottom-text-box.large {
+  grid-column: span 2; /* Span 2 columns */
 }
 
 
@@ -162,9 +319,14 @@ body {
 <body>
 
   <div class="topnav">
-    <a href="home.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="about.html">About</a>
+    <a href="homepage.html" class="topnav-logo-link">
+      <img src="Images/sigma block backround no more.png" alt="Logo" class="topnav-logo">
+    </a>
+    <div class="topnav-links">
+      <a href="models.html">Models</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+    </div>
   </div>
     
 
@@ -187,6 +349,7 @@ body {
     <div class="text-block">
       <h4>Nature</h4>
       <p>What a beautiful sunrise</p>
+    </div>
   </div>
 
   <div class="mySlides1 fade">
@@ -194,6 +357,7 @@ body {
     <div class="text-block">
       <h4>Nature</h4>
       <p>What a beautiful sunrise</p>
+    </div>
   </div>
 
   <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
@@ -206,6 +370,7 @@ body {
     <div class="text-block">
       <h4>Nature</h4>
       <p>What a beautiful sunrise</p>
+    </div>
   </div>
 
   <div class="mySlides2 fade">
@@ -213,6 +378,7 @@ body {
     <div class="text-block">
       <h4>Nature</h4>
       <p>What a beautiful sunrise</p>
+    </div>
   </div>
 
   <div class="mySlides2 fade">
@@ -220,6 +386,7 @@ body {
     <div class="text-block">
       <h4>Nature</h4>
       <p>What a beautiful sunrise</p>
+    </div>
   </div>
 
   <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
@@ -233,6 +400,7 @@ body {
     <div class="text-block">
       <h4>Nature</h4>
       <p>What a beautiful sunrise</p>
+    </div>
   </div>
 
 
@@ -242,9 +410,90 @@ body {
 </div>
 
 
-  <div class="footer">
-    <p>Footer</p>
+<!-- footer -->
+<div class="footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <div class="footer-logo">
+        <img src="Images/sigma block backround no more.png" alt="Logo">
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="social-button">FB</a>
+        <a href="#" class="social-button">TW</a>
+        <a href="#" class="social-button">IG</a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="#">Models</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+      </div>
+      <!-- Footer Text Boxes -->
+<div class="footer-text-grid">
+  <div class="footer-text-box">
+    Site Terms/Policies
+    <ul class="footer-list">
+      <li><a href="#">Community standards</a></li>
+      <li><a href="#">Privacy policy</a></li>
+      <li><a href="#">Terms</a></li>
+    </ul>
   </div>
+  <div class="footer-text-box">
+    Support
+    <ul class="footer-list">
+      <li><a href="#">Returns</a></li>
+      <li><a href="#">Find a product demo</a></li>
+      <li><a href="#">Terms of sale</a></li>
+    </ul>
+  </div>
+  <div class="footer-text-box">
+    Help Center
+    <ul class="footer-list">
+      <li><a href="#">idk Help Centre</a></li>
+      <li><a href="#">Instagram Help Centre</a></li>
+      <li><a href="#">Messenger Help Centre</a></li>
+    </ul>
+  </div>
+  <div class="footer-text-box">
+    Values
+    <ul class="footer-list">
+      <li><a href="#">Accessibility</a></li>
+      <li><a href="#">Education</a></li>
+      <li><a href="#">Privacy</a></li>
+    </ul>
+  </div>
+  <div class="footer-text-box">
+    Contact
+    <ul class="footer-list">
+      <li><a href="#">Call Us</a></li>
+      <li><a href="#">Email Us</a></li>
+      <li><a href="#">Find Service Locations</a></li>
+    </ul>
+  </div>
+  <div class="footer-text-box">
+    About
+    <ul class="footer-list">
+      <li><a href="#">Leadership</a></li>
+      <li><a href="#">Investors</a></li>
+      <li><a href="#">Career Opportunities</a></li>
+    </ul>
+  </div>
+</div>
+
+    </div>
+  </div>
+<div class="footer-bottom-container">
+  <div class="footer-bottom-bar">
+    <div class="footer-bottom-text-box large">Copyright © 2024 Elieas Inc. All rights reserved.</div>
+    <div class="footer-bottom-text-box">Privacy Policy</div>
+    <div class="footer-bottom-text-box">Terms of Use</div>
+    <div class="footer-bottom-text-box">Sales and Refunds</div>
+    <div class="footer-bottom-text-box">Legal</div>
+  </div>
+</div>
+
+
   <script>
    let slideIndex = [1,1,1];
 let slideId = ["mySlides1", "mySlides2", "mySlides3"]
