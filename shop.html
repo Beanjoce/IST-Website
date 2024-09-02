@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/* General styles */
+
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
@@ -15,115 +15,763 @@
 
 body {
   margin: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden; 
+  
 }
 
-/* Style the top navigation bar */
+
+
+/* Top navigation bar */
 .topnav {
-  position: absolute; /* Fixes the nav at the top of the viewport */
+  position: absolute;  
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Ensures it is above other content */
-  text-align: center;
+  z-index: 1000;
   padding: 5px 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5px 20px;
 }
 
-/* Style the topnav links */
-.topnav a {
+
+.topnav-logo-link {
+  position: absolute;
+  left: 20px; 
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.topnav-logo {
+  height: 2vw; 
+  width: auto; 
+  display: block; 
+}
+
+
+.topnav-links {
+  display: inline-block; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Topnav links */
+.topnav-links a {
   display: inline-block;
   color: #f2f2f2;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 3vw;
-  margin: 0 5vw;
+  font-size: 2vw;
+  margin: 0 5vw; 
 }
 
-/* Change color on hover */
-.topnav a:hover {
+
+.topnav-links a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Style the content */
-.content {
-  position: relative; 
+
+
+
+
+
+
+
+
+
+
+/* overview section */
+.overview {
+  max-width: 90vw;
+  height: 100vh;
+  margin: 20px auto ;
+  display: flex;
+  padding: 20px;
+  background-color: #fff; 
+  box-sizing: border-box;
+  margin-top: 80px; 
 }
 
+.overview-left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-.image-container {
+/* Image Slideshow Container */
+.overview-image-slideshow {
   position: relative;
-  width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 80vh;
   overflow: hidden;
 }
 
-.image-container img {
-  display: block;
+.overview-image-slideshow img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block; 
+  position: absolute; 
+  top: 0;
+  left: 0;
 }
 
-/* Container for overlay text */
-.text-overlay {
+
+.prev, .next {
+  cursor: pointer;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: auto;
+  padding: 16px;
   color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.overview-image-slideshow img {
+  display: none;
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* everything else in the overview */
+.overview-right {
+  flex: 1;  
+  padding: 1vw 1vw;
+  box-sizing: border-box;
+}
+
+.overview-title {
+  font-size: 3vw;
+  margin-bottom: 1vw;
+}
+
+.overview-price {
+  font-size: 2vw;
+  margin-bottom: 4vw;
+}
+
+.overview-description {
+  font-size: 1vw;
+  margin-bottom: 6vw;
+}
+
+.overview-button {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 3vw;
   text-align: center;
-  z-index: 1; /* Ensure text is above the image */
 }
 
-/* Title styling */
-.text-overlay h1 {
-  font-size: 10vw;
-  margin: 0;
+.overview-button:hover {
+  background-color: #45a049;
 }
 
-/* Subheading styling */
-.text-overlay h2 {
-  font-size: 4vw;
-  margin: 0;
+
+/* Tech Specs Section */
+.tech-specs {
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  margin: 20px auto;
+  max-width: 90vw;
 }
 
-/* Style the footer */
+.tech-specs-title {
+  font-size: 2.5vw;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tech-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.tech-specs-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.tech-specs-table td {
+  font-size: 1vw;
+}
+
+/* Customer Reviews */
+.reviews {
+  font-family: Arial;
+  margin: 0 auto; /* Center website */
+  max-width: 90vw; /* Max width */
+  padding: 2vw;
+  box-sizing: border-box;
+}
+
+.heading {
+  font-size: 30px;
+  margin-right: 25px;
+}
+
+.fa {
+  object-fit: cover;
+  font-size: 2em;
+}
+
+.review-stars {
+  object-fit: contain;
+  font-size: 2rem;
+  padding-bottom: 1vw;
+}
+
+.checked {
+  color: orange;
+}
+
+/* Three column layout */
+.side {
+  float: left;
+  width: 15%;
+  margin-top: 10px;
+}
+
+.middle {
+  float: left;
+  width: 70%;
+  margin-top: 10px;
+}
+
+/* Place text to the right */
+.right {
+  text-align: right;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The bar container */
+.bar-container {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+
+/* Individual bars */
+.bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
+.bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+.bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+.bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+.bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+  .side, .middle {
+    width: 100%;
+  }
+  /* Hide the right column on small screens */
+  .right {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
 .footer {
   background-color: #f1f1f1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footer-left {
+  flex: 1;
+  max-width: 300px; 
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  max-width: 150px; 
+  display: block;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  justify-content: center; 
+}
+
+.social-button {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: .8vw 1.3vw;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1vw;
+}
+
+.social-button:hover {
+  background-color: #45a049;
+}
+
+.footer-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Footer Links */
+.footer-links {
+  display: flex;
+  justify-content: center; 
+  gap: 12vw; 
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  text-decoration: underline;
+  color: #333;
+  font-size: 1vw;
+}
+
+.footer-text-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.footer-text-box {
+
+  padding: 10px; 
+  text-align: center;
+  font-size: 0.8vw;
+  position: relative; 
+}
+
+.footer-list {
+  list-style-type: none; 
+  margin: 10px 0 0; 
+  font-size: 0.7vw; 
+}
+
+.footer-list li {
+  margin-bottom: 5px; 
+}
+
+.footer-list a {
+  text-decoration: none; 
+  color: #333; 
+}
+
+.footer-list a:hover {
+  text-decoration: underline; 
+}
+
+
+
+.footer-bottom-container {
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+/* Bottom bar */
+.footer-bottom-bar {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px; 
+  width: 100%; 
+  box-sizing: border-box;
+  border-top: 2px solid #ccc; 
+}
+
+
+.footer-bottom-text-box {
   padding: 10px;
   text-align: center;
+  font-size: 0.8vw;
 }
+
+.footer-bottom-text-box.large {
+  grid-column: span 2; 
+}
+
 </style>
 </head>
+
+
+
+
+
+
+
 <body>
 
   <div class="topnav">
-    <a href="models.html">Models</a>
-    <a href="shop.html">Shop</a>
-    <a href="about.html">About</a>
+    <a href="homepage.html" class="topnav-logo-link">
+      <img src="Images/sigma block backround no more.png" alt="Logo" class="topnav-logo">
+    </a>
+    <div class="topnav-links">
+      <a href="models.html">Models</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+    </div>
   </div>
   
-  <div class="content">
-    <div class="image-container">
-      <img src="Images/20240808_114244.jpg" alt="Description of image">
-      <div class="text-overlay">
-        <h1>Main Title</h1>
-        <h2>Subheading</h2>
+
+  <div class="overview">
+    <div class="overview-left">
+      <div class="overview-image-slideshow">
+        <img src="Images/20240808_114232.jpg" class="fade" style="width:100%">
+        <img src="Images/20240808_114259.jpg" class="fade" style="width:100%">
+        <img src="Images/20240808_120437.jpg" class="fade" style="width:100%">
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
       </div>
     </div>
+    <div class="overview-right">
+      <h1 class="overview-title">SigmaBlock Customizable Drone</h1>
+      <div class="overview-price">$159.99</div>
+      <p class="overview-description">
+        Once upon a time there was a very fat man called henry hafer and he was very fat and stinky and smelly
+      </p>
+      <a href="checkout.html" class="overview-button">Order Now</a>
+    </div>
+  </div>
 
-    <div class="image-container">
-      <img src="Images/20240808_120439.jpg" alt="Description of image">
-    </div>
-    <div class="image-container">
-      <img src="Images/20240808_114244.jpg" alt="Description of image">
+
+<!-- Tech Specs Section -->
+<div class="tech-specs">
+  <h2 class="tech-specs-title">Tech Specs</h2>
+  <table class="tech-specs-table">
+    <tbody>
+      <tr>
+        <td>Age</td>
+        <td>8+</td>
+      </tr>
+      <tr>
+        <td>Basic Functions</td>
+        <td>Rise and Fall / Advance and Retreat / Steering / Side Flight / Slight Adjustment / Light Control</td>
+      </tr>
+      <tr>
+        <td>Advanced Features</td>
+        <td>Hover / Somersault / Customizable Stunts</td>
+      </tr>
+      <tr>
+        <td>Forms</td>
+        <td>Six-Axis Aircraft / Hovercraft / DIY</td>
+      </tr>
+      <tr>
+        <td>Environment to Use</td>
+        <td>Air / Ground / Water</td>
+      </tr>
+      <tr>
+        <td>Product Dimensions</td>
+        <td>Six-Axis Aircraft [D 235x54mm], Hovercraft [335x208x126mm]</td>
+      </tr>
+      <tr>
+        <td>Color</td>
+        <td>Blacktd</td>
+      </tr>
+      <tr>
+        <td>Material</td>
+        <td>EPP / PP, Environment-friendly Material</td>
+      </tr>
+      <tr>
+        <td>Flight Speed</td>
+        <td>0.2 m/s, Adjustable</td>
+      </tr>
+      <tr>
+        <td>Flight Time</td>
+        <td>Approx. 6 minutes</td>
+      </tr>
+      <tr>
+        <td>Control Range</td>
+        <td>10 Meters</td>
+      </tr>
+      <tr>
+        <td>Flight Height</td>
+        <td>5 Meters</td>
+      </tr>
+      <tr>
+        <td>Battery Capacity</td>
+        <td>700mAh, Replaceable</td>
+      </tr>
+      <tr>
+        <td>Connection Method</td>
+        <td>Magnetic Connection</td>
+      </tr>
+      <tr>
+        <td>Control Method</td>
+        <td>SigmaBlock App</td>
+      </tr>
+      <tr>
+        <td>Communication Method</td>
+        <td>Bluetooth</td>
+      </tr>
+      <tr>
+        <td>Sensor</td>
+        <td>Six-axis Gyroscope / Ultrasonic / Barometer</td>
+      </tr>
+      <tr>
+        <td>Camera Support</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Programming Support</td>
+        <td>Graphical Programming</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class = "reviews">
+<span class="heading">User Rating</span>
+<span class="fa fa-star checked review-stars"></span>
+<span class="fa fa-star checked review-stars"></span>
+<span class="fa fa-star checked review-stars"></span>
+<span class="fa fa-star checked review-stars"></span>
+<span class="fa fa-star review-stars"></span>
+<p style="padding:1vw;font-size: 20px;">4.1 average based on 254 reviews.</p>
+<hr style="border:3px solid #f1f1f1">
+
+<div class="row">
+  <div class="side">
+    <div>5 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5"></div>
     </div>
   </div>
-  
-  <div class="footer">
-    <p>Footer</p>
+  <div class="side right">
+    <div>150</div>
   </div>
-  
+  <div class="side">
+    <div>4 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>63</div>
+  </div>
+  <div class="side">
+    <div>3 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>15</div>
+  </div>
+  <div class="side">
+    <div>2 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>6</div>
+  </div>
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>20</div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- footer -->
+<div class="footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <div class="footer-logo">
+        <img src="Images/sigma block backround no more.png" alt="Logo">
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="social-button">FB</a>
+        <a href="#" class="social-button">TW</a>
+        <a href="#" class="social-button">IG</a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="#">Models</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+      </div>
+      <!-- Footer Text Boxes -->
+<div class="footer-text-grid">
+  <div class="footer-text-box">
+    Site Terms/Policies
+    <ul class="footer-list">
+      <li><a href="#">Community standards</a></li>
+      <li><a href="#">Privacy policy</a></li>
+      <li><a href="#">Terms</a></li>
+    </ul>
+  </div>
+  <div class="footer-text-box">
+    Support
+    <ul class="footer-list">
+      <li><a href="#">Returns</a></li>
+      <li><a href="#">Find a product demo</a></li>
+      <li><a href="#">Terms of sale</a></li>
+    </ul>
+  </div>
+  <div class="footer-text-box">
+    Help Center
+    <ul class="footer-list">
+      <li><a href="#">idk Help Centre</a></li>
+      <li><a href="#">Instagram Help Centre</a></li>
+      <li><a href="#">Messenger Help Centre</a></li>
+    </ul>
+  </div>
+  <div class="footer-text-box">
+    Values
+    <ul class="footer-list">
+      <li><a href="#">Accessibility</a></li>
+      <li><a href="#">Education</a></li>
+      <li><a href="#">Privacy</a></li>
+    </ul>
+  </div>
+  <div class="footer-text-box">
+    Contact
+    <ul class="footer-list">
+      <li><a href="#">Call Us</a></li>
+      <li><a href="#">Email Us</a></li>
+      <li><a href="#">Find Service Locations</a></li>
+    </ul>
+  </div>
+  <div class="footer-text-box">
+    About
+    <ul class="footer-list">
+      <li><a href="#">Leadership</a></li>
+      <li><a href="#">Investors</a></li>
+      <li><a href="#">Career Opportunities</a></li>
+    </ul>
+  </div>
+</div>
+
+    </div>
+  </div>
+<div class="footer-bottom-container">
+  <div class="footer-bottom-bar">
+    <div class="footer-bottom-text-box large">Copyright © 2024 Elieas Inc. All rights reserved.</div>
+    <div class="footer-bottom-text-box">Privacy Policy</div>
+    <div class="footer-bottom-text-box">Terms of Use</div>
+    <div class="footer-bottom-text-box">Sales and Refunds</div>
+    <div class="footer-bottom-text-box">Legal</div>
+  </div>
+</div>
+</div>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.querySelectorAll(".overview-image-slideshow img");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+</script>
 </body>
 </html>
