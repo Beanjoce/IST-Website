@@ -1,5 +1,6 @@
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <title>CSS Template</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +18,7 @@ body {
   overflow-x: hidden; 
   background-color: rgb(176, 231, 255);
 }
+
 
 /* Top navigation bar */
 .topnav {
@@ -188,80 +190,30 @@ body {
 .footer-socials {
   display: flex;
   gap: 10px;
-  justify-content: center; 
 }
 
 .social-button {
   display: inline-block;
-  background-color: #4CAF50;
+  background-color: #333;
   color: white;
-  padding: .8vw 1.3vw;
+  width: 40px; 
+  height: 40px; 
+  text-align: center;
+  line-height: 40px; 
   text-decoration: none;
-  border-radius: 5px;
-  font-size: 1vw;
+  border-radius: 50%; 
+  font-size: 20px; 
+  transition: background-color 0.3s;
 }
 
 .social-button:hover {
-  background-color: #45a049;
+  background-color: #555;
 }
 
-.footer-right {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.social-button i {
+  vertical-align: middle; 
 }
 
-/* Footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.footer-left {
-  flex: 1;
-  max-width: 300px; 
-}
-
-.footer-logo {
-  margin-bottom: 20px;
-}
-
-.footer-logo img {
-  max-width: 150px; 
-  display: block;
-}
-
-.footer-socials {
-  display: flex;
-  gap: 10px;
-  justify-content: center; 
-}
-
-.social-button {
-  display: inline-block;
-  background-color: #4CAF50;
-  color: white;
-  padding: .8vw 1.3vw;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 20px;
-}
-
-.social-button:hover {
-  background-color: #45a049;
-}
 
 .footer-right {
   flex: 2;
@@ -362,7 +314,7 @@ body {
   </div>
     
 
-<div class="slideshow-container">
+<div id="C1" class="slideshow-container">
   <div class="mySlides1 fade">
     <img src="Images/top ten photoshop but better 2.0.png" width="1000" height="750">
     <div class="text-block2">
@@ -396,7 +348,7 @@ body {
   <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
 </div>
 
-<div class="slideshow-container">
+<div id="C2" class="slideshow-container">
   <div class="mySlides2 fade">
     <img src="Images/boat 2.jpg" width="1000" height="750">
     <div class="text-block">
@@ -425,7 +377,7 @@ body {
   <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
 </div>
 
-<div class="slideshow-container">
+<div id="C3" class="slideshow-container">
 
   <div class="mySlides3 fade">
     <img src="Images/spider white.jpg" style="width:100%">
@@ -463,9 +415,9 @@ body {
         <img src="Images/sigma block backround no more.png" alt="Logo">
       </div>
       <div class="footer-socials">
-        <a href="#" class="social-button">FB</a>
-        <a href="#" class="social-button">TW</a>
-        <a href="#" class="social-button">IG</a>
+        <a href="" class="social-button"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-button"><i class="fab fa-twitter"></i></a>
+        <a href="https://youtu.be/dQw4w9WgXcQ" class="social-button"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
     <div class="footer-right">
@@ -537,6 +489,7 @@ body {
     <div class="footer-bottom-text-box">Legal</div>
   </div>
 </div>
+</div>
 
 
   <script>
@@ -560,6 +513,8 @@ function showSlides(n, no) {
   }
   x[slideIndex[no]-1].style.display = "block";  
 }
+
+
   </script>
 </body>
 </html>
