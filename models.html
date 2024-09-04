@@ -103,7 +103,7 @@ body {
 }
 
 
-.mySlides {
+.mySlides1, .mySlides2, .mySlides3 {
   display: none;
 }
 
@@ -141,7 +141,6 @@ body {
 }
 
 /* Caption text */
-/* Bottom right text */
 .text-block1 {
   position: absolute;
   top: 110px;
@@ -153,7 +152,6 @@ body {
   opacity: 100%;
   font-size: 1vw;
 }
-/* Bottom right text */
 .text-block2 {
   position: absolute;
   bottom: 20px;
@@ -236,11 +234,6 @@ body {
 .social-button:hover {
   background-color: #555;
 }
-
-.social-button i {
-  vertical-align: middle; 
-}
-
 
 .footer-right {
   flex: 2;
@@ -347,7 +340,6 @@ body {
     <div class="text-block1">
       <h4>Air Model:</h4>
       <p>The first model that you can make with our wonderful drone technology is the flying/drone model. This model is the most simple and often first model people make with the capability of flying all around, doing spins, flips and other tricks.
-
       </p>
     </div>
     <div class="text-block2">
@@ -393,8 +385,6 @@ body {
     </div>
   </div>
 
-  </div>
-
   <div class="mySlides2 fade">
     <img src="Images/mid hover.png" width="1000" height="750">
     <div class="text-block">
@@ -416,7 +406,6 @@ body {
 </div>
 
 <div id="C3" class="slideshow-container">
-
   <div class="mySlides3 fade">
     <img src="Images/spider white.jpg" style="width:100%">
     <div class="text-block">
@@ -429,7 +418,8 @@ body {
 
       </p>
     
-    </div><div class="text-block2">
+    </div>
+    <div class="text-block2">
       <p>With magnetic attachments and modularity, the Airblock drone is only limited by your imagination. Perfect for STEM. </p>
     </div>
   </div>
@@ -439,7 +429,6 @@ body {
       <h4>Nature</h4>
       <p>What a beautiful sunrise</p>
     </div>
-    
   </div>
 
   <div class="mySlides3 fade">
@@ -453,7 +442,6 @@ body {
   <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
   <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
 </div>
-
 
 <!-- footer -->
 <div class="footer">
@@ -475,94 +463,91 @@ body {
         <a href="about.html">About</a>
       </div>
       <!-- Footer Text Boxes -->
-<div class="footer-text-grid">
-  <div class="footer-text-box">
-    Site Terms/Policies
-    <ul class="footer-list">
-      <li><a href="#">Community standards</a></li>
-      <li><a href="#">Privacy policy</a></li>
-      <li><a href="#">Terms</a></li>
-    </ul>
-  </div>
-  <div class="footer-text-box">
-    Support
-    <ul class="footer-list">
-      <li><a href="#">Returns</a></li>
-      <li><a href="#">Find a product demo</a></li>
-      <li><a href="#">Terms of sale</a></li>
-    </ul>
-  </div>
-  <div class="footer-text-box">
-    Help Center
-    <ul class="footer-list">
-      <li><a href="#">idk Help Centre</a></li>
-      <li><a href="#">Instagram Help Centre</a></li>
-      <li><a href="#">Messenger Help Centre</a></li>
-    </ul>
-  </div>
-  <div class="footer-text-box">
-    Values
-    <ul class="footer-list">
-      <li><a href="#">Accessibility</a></li>
-      <li><a href="#">Education</a></li>
-      <li><a href="#">Privacy</a></li>
-    </ul>
-  </div>
-  <div class="footer-text-box">
-    Contact
-    <ul class="footer-list">
-      <li><a href="#">Call Us</a></li>
-      <li><a href="#">Email Us</a></li>
-      <li><a href="#">Find Service Locations</a></li>
-    </ul>
-  </div>
-  <div class="footer-text-box">
-    About
-    <ul class="footer-list">
-      <li><a href="#">Leadership</a></li>
-      <li><a href="#">Investors</a></li>
-      <li><a href="#">Career Opportunities</a></li>
-    </ul>
-  </div>
-</div>
+      <div class="footer-text-grid">
+        <div class="footer-text-box">
+          Site Terms/Policies
+          <ul class="footer-list">
+            <li><a href="#">Community standards</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+        <div class="footer-text-box">
+          Support
+          <ul class="footer-list">
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Find a product demo</a></li>
+            <li><a href="#">Terms of sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-text-box">
+          Help Center
+          <ul class="footer-list">
+            <li><a href="#">idk Help Centre</a></li>
+            <li><a href="#">Instagram Help Centre</a></li>
+            <li><a href="#">Messenger Help Centre</a></li>
+          </ul>
+        </div>
+        <div class="footer-text-box">
+          Values
+          <ul class="footer-list">
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-text-box">
+          Contact
+          <ul class="footer-list">
+            <li><a href="#">Call Us</a></li>
+            <li><a href="#">Email Us</a></li>
+            <li><a href="#">Find Service Locations</a></li>
+          </ul>
+        </div>
+        <div class="footer-text-box">
+          About
+          <ul class="footer-list">
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">Career Opportunities</a></li>
+          </ul>
+        </div>
+      </div>
 
     </div>
   </div>
-<div class="footer-bottom-container">
-  <div class="footer-bottom-bar">
-    <div class="footer-bottom-text-box large">Copyright © 2024 Elieas Inc. All rights reserved.</div>
-    <div class="footer-bottom-text-box">Privacy Policy</div>
-    <div class="footer-bottom-text-box">Terms of Use</div>
-    <div class="footer-bottom-text-box">Sales and Refunds</div>
-    <div class="footer-bottom-text-box">Legal</div>
+  <div class="footer-bottom-container">
+    <div class="footer-bottom-bar">
+      <div class="footer-bottom-text-box large">Copyright © 2024 Elieas Inc. All rights reserved.</div>
+      <div class="footer-bottom-text-box">Privacy Policy</div>
+      <div class="footer-bottom-text-box">Terms of Use</div>
+      <div class="footer-bottom-text-box">Sales and Refunds</div>
+      <div class="footer-bottom-text-box">Legal</div>
+    </div>
   </div>
 </div>
-</div>
-
 
   <script>
    let slideIndex = [1,1,1];
-let slideId = ["mySlides1", "mySlides2", "mySlides3"]
-showSlides(1, 0,);
-showSlides(1, 1,);
-showSlides(1, 2,);
+   let slideId = ["mySlides1", "mySlides2", "mySlides3"];
+   showSlides(1, 0);
+   showSlides(1, 1);
+   showSlides(1, 2);
 
-function plusSlides(n, no) {
-  showSlides(slideIndex[no] += n, no);
-}
+   function plusSlides(n, no) {
+     showSlides(slideIndex[no] += n, no);
+   }
 
-function showSlides(n, no) {
-  let i;
-  let x = document.getElementsByClassName(slideId[no]);
-  if (n > x.length) {slideIndex[no] = 1}    
-  if (n < 1) {slideIndex[no] = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex[no]-1].style.display = "block";  
-}
-
-
+   function showSlides(n, no) {
+     let i;
+     let x = document.getElementsByClassName(slideId[no]);
+     if (n > x.length) {slideIndex[no] = 1;}    
+     if (n < 1) {slideIndex[no] = x.length;}
+     for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+     }
+     x[slideIndex[no] - 1].style.display = "block";  
+   }
   </script>
 </body>
 </html>
